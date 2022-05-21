@@ -102,7 +102,7 @@ tr:nth-child(even) {
             <!-- end of navbar navigation -->
             <?php 
                  require_once "db.php";
-                   $sql = "SELECT * FROM core2_history where c_user = '$_SESSION[customer_email]' AND status = 'Accepted'";
+                   $sql = "SELECT * FROM core2_history where c_user = '$_SESSION[customer_email]' AND status = 'complete'";
                     if($result = mysqli_query($conn, $sql)){
                         if(mysqli_num_rows($result) > 0){
                  echo '<table class="table table-bordered table-striped">';

@@ -12,7 +12,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Finding Driver</title>
+    <title>Waiting for Pickup</title>
     <link rel="shortcut icon" type="image/jpg" href="../assets/img/philtransure_icon.png" />
     <link href="assets/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet">
     <link href="assets/vendor/fontawesome/css/solid.min.css" rel="stylesheet">
@@ -73,14 +73,14 @@ body {
         foreach($query_run as $row)
         {
 
-            if($row['status'] == 'Pending')
+            if($row['status'] == 'accepted')
             {
                 echo '<meta http-equiv="refresh" content="2">';
-                echo "<br><center><strong> Finding Driver..."." </strong> <br> </center>";
+                echo "<br><center><strong> Waiting for pickup..."." </strong> <br> </center>";
                 echo "<center> Please Wait... </center>";
             } else {
                 echo '<meta http-equiv="refresh" content="">';
-                echo "<br><center> <b>"."Finding Driver: </b>"."Completed </center>";
+                echo "<br><center> <b>"."Pick up: </b>"."Completed </center>";
             }
 
         }
@@ -97,7 +97,8 @@ body {
                     <h1></h1>
                 </div>
            <div class="new" style="text-align: justify-all;">
-   <h4 class="table table-hover"><em><b>Destination:</b> <?php echo  $destination; ?>  </h4>
+        
+    <h4 class="table table-hover"><em><b>Destination:</b> <?php echo  $destination; ?>  </h4>   
    <h4 class="table table-hover"><em><b>Destination Address:</b> <?php echo  $destination_address; ?>  </h4>
    <h4 class="table table-hover"><b>Time Duration:</b> <?php echo $e . 'Min'; ?> </h4>
    <h4 class="table table-hover"><b>Distance:</b> <?php echo $c . 'km'; ?></em></h4>
@@ -114,7 +115,7 @@ body {
 
 
                </div>
-                <center><a href="waitingpage.php"><input type="submit" name="submit" id="submit" value="Proceed" disabled style="margin-bottom: -20px; margin-top: 20px; background-color: #0d6efd; width: 100%; height: 7vh;"  /></a> </center>
+                <center><a href="dropoff.php"><input type="submit" name="submit" id="submit" value="Proceed" disabled style="margin-bottom: -20px; margin-top: 20px; background-color: #0d6efd; width: 100%; height: 7vh;"  /></a> </center>
         
             </div>
     
@@ -124,7 +125,7 @@ body {
 <script>
 function myFunction() {
  var status = "<?php echo $row['status']; ?>";
- if(status == "accepted")
+ if(status == "pickup")
  {
     document.getElementById("submit").disabled = false;
  }  
