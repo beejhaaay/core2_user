@@ -1,3 +1,3 @@
 <?php
 
-header('location: customer/');
+header('location: core2/customer/index.php');
