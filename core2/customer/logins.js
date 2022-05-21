@@ -68,7 +68,7 @@ $(document).ready(function () {
                                 showConfirmButton: false
                             });
                             setTimeout(function () {
-                                location.href = "../core2/user/booking.php";
+                                location.href = "../user/booking.php";
                             }, 800);
                             break;
                         default:
