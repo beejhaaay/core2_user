@@ -73,7 +73,7 @@ body {
         foreach($query_run as $row)
         {
 
-            if($row['status'] == 'Accepted')
+            if($row['status'] == 'accepted')
             {
                 echo '<meta http-equiv="refresh" content="2">';
                 echo "<br><center><strong> Waiting for pickup..."." </strong> <br> </center>";
